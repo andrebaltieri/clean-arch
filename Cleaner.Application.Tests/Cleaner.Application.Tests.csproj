@@ -13,4 +13,9 @@
     <PackageReference Include="coverlet.collector" Version="1.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cleaner.Application\Cleaner.Application.csproj" />
+    <ProjectReference Include="..\Cleaner.Domain\Cleaner.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
