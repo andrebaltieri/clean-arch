@@ -15,7 +15,8 @@ namespace Cleaner.Domain.Tests
             var email = new Email("andre@balta.io");
             var document = new Document("12345678901");
             var student = new Student(name, email, document);
-            var subscription = new Subscription(null, student);
+            var plan = new Plan("Anual", 779.90M);
+            var subscription = new Subscription(null, student, plan);
 
             Assert.AreEqual(false, subscription.IsValid);
             Assert.AreEqual(1, subscription.Notifications.Count);
@@ -25,7 +26,8 @@ namespace Cleaner.Domain.Tests
         public void ShouldFailWhenStudentNotProvided()
         {
             var payment = new Payment(779.90M, 779.90M);
-            var subscription = new Subscription(payment, null);
+            var plan = new Plan("Anual", 779.90M);
+            var subscription = new Subscription(payment, null, plan);
 
             Assert.AreEqual(false, subscription.IsValid);
             Assert.AreEqual(1, subscription.Notifications.Count);

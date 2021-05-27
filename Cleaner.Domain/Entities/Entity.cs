@@ -3,7 +3,8 @@ using Flunt.Notifications;
 
 namespace Cleaner.Domain.Entities
 {
-    public abstract class Entity : Notifiable<Notification>, IEquatable<Entity>
+    public abstract class Entity : Notifiable<Notification>, 
+        IEquatable<Entity>
     {
         protected Entity()
         {
