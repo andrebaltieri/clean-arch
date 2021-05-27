@@ -42,6 +42,7 @@ namespace Cleaner.Application.UseCases.Subscribe
             try
             {
                 var subscription = new Subscription(payment, student, plan);
+                subscription.Subscribe();
                 if (!subscription.IsValid)
                     return new Output(Guid.Empty, 400, "Assinatura inválida");
                 
